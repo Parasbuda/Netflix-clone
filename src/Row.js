@@ -33,7 +33,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       setTrailerUrl("")
     }
     else {
-      movieTrailer(movie?.name || "")
+      movieTrailer(movie?.name ||movie?.title|| "")
         .then(url => {
           const urlParams = new URLSearchParams(new URL(url).search)
           setTrailerUrl(urlParams.get("v"))
